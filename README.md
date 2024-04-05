@@ -1,1 +1,1 @@
-# agri-det
+![sample](images/visuals.png)
