@@ -1,0 +1,8 @@
+mmdetection
+
+data
+models
+
+training-output
+evaluation-output
+inference-output
