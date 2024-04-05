@@ -87,7 +87,7 @@ python scripts/sahi_evaluate.py ^
     --overlap_height_ratio 0.1 ^
     --overlap_width_ratio 0.1 ^
     --dataset_split_path "data/sunflower_dataset_v1.0/val" ^
-	--dataset_annotations_path "data/sunflower_dataset_v1.0/val/val-annotations.json" ^
+    --dataset_annotations_path "data/sunflower_dataset_v1.0/val/val-annotations.json" ^
     --output_directory_path "evaluation-output/rtmdet-tiny_sahi_640"
 ```
 
@@ -97,7 +97,7 @@ To inference with a non-SAHI model, run the `mmdetection/demo/image_demo.py` scr
 
 ```
 python mmdetection/demo/image_demo.py ^
-	data/sunflower_dataset_v1.0/test/images/56c44d14-DJI_0031.JPG ^
+    data/sunflower_dataset_v1.0/test/images/56c44d14-DJI_0031.JPG ^
     configs/rtmdet-tiny_sahi_640.py ^
     --weights models/rtmdet-tiny_sahi_640.pth
 ```
@@ -114,4 +114,4 @@ python inference_single_image.py ^
     --overlap_width_ratio 0.1 ^
     --input_image_path "data/sunflower_dataset_v1.0/test/images/56c44d14-DJI_0031.JPG" ^
     --output_directory_path "inference-output"
-	```
+```
