@@ -8,11 +8,11 @@ python scripts/sahi_evaluate.py ^
     --overlap_height_ratio 0.1 ^
     --overlap_width_ratio 0.1 ^
     --dataset_split_path "data/sunflower_dataset_v2.0/val" ^
-	--dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
+    --dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
     --output_directory_path "evaluation-output/rtmdet-tiny_sahi_640_val"
-	
+    
 python scripts/evaluate_defective_ratio.py "data/sunflower_dataset_v2.0/val/val-annotations.json" "evaluation-output/rtmdet-tiny_sahi_640_val/detections/result.json"
-	
+    
 python scripts/sahi_evaluate.py ^
     --model_path "models/rtmdet-tiny_sahi_640_aug.pth" ^
     --config_path "configs/rtmdet-tiny_sahi_640_aug.py" ^
@@ -21,11 +21,11 @@ python scripts/sahi_evaluate.py ^
     --overlap_height_ratio 0.1 ^
     --overlap_width_ratio 0.1 ^
     --dataset_split_path "data/sunflower_dataset_v2.0/val" ^
-	--dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
+    --dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
     --output_directory_path "evaluation-output/rtmdet-tiny_sahi_640_aug_val"
-	
+
 python scripts/evaluate_defective_ratio.py "data/sunflower_dataset_v2.0/val/val-annotations.json" "evaluation-output/rtmdet-tiny_sahi_640_aug_val/detections/result.json"
-	
+
 python scripts/sahi_evaluate.py ^
     --model_path "models/rtmdet-s_sahi_640.pth" ^
     --config_path "configs/rtmdet-s_sahi_640.py" ^
@@ -34,11 +34,11 @@ python scripts/sahi_evaluate.py ^
     --overlap_height_ratio 0.1 ^
     --overlap_width_ratio 0.1 ^
     --dataset_split_path "data/sunflower_dataset_v2.0/val" ^
-	--dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
+    --dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
     --output_directory_path "evaluation-output/rtmdet-s_sahi_640_val"
-	
+
 python scripts/evaluate_defective_ratio.py "data/sunflower_dataset_v2.0/val/val-annotations.json" "evaluation-output/rtmdet-s_sahi_640_val/detections/result.json"
-	
+
 python scripts/sahi_evaluate.py ^
     --model_path "models/rtmdet-s_sahi_640_aug.pth" ^
     --config_path "configs/rtmdet-s_sahi_640_aug.py" ^
@@ -47,11 +47,11 @@ python scripts/sahi_evaluate.py ^
     --overlap_height_ratio 0.1 ^
     --overlap_width_ratio 0.1 ^
     --dataset_split_path "data/sunflower_dataset_v2.0/val" ^
-	--dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
+    --dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
     --output_directory_path "evaluation-output/rtmdet-s_sahi_640_aug_val"
 
 python scripts/evaluate_defective_ratio.py "data/sunflower_dataset_v2.0/val/val-annotations.json" "evaluation-output/rtmdet-s_sahi_640_aug_val/detections/result.json"
-	
+
 python scripts/sahi_evaluate.py ^
     --model_path "models/rtmdet-tiny_sahi_1088.pth" ^
     --config_path "configs/rtmdet-tiny_sahi_1088.py" ^
@@ -60,9 +60,9 @@ python scripts/sahi_evaluate.py ^
     --overlap_height_ratio 0.1 ^
     --overlap_width_ratio 0.1 ^
     --dataset_split_path "data/sunflower_dataset_v2.0/val" ^
-	--dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
+    --dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
     --output_directory_path "evaluation-output/rtmdet-tiny_sahi_1088_val"
-	
+
 python scripts/evaluate_defective_ratio.py "data/sunflower_dataset_v2.0/val/val-annotations.json" "evaluation-output/rtmdet-tiny_sahi_1088_val/detections/result.json"
 
 python scripts/sahi_evaluate.py ^
@@ -73,7 +73,7 @@ python scripts/sahi_evaluate.py ^
     --overlap_height_ratio 0.1 ^
     --overlap_width_ratio 0.1 ^
     --dataset_split_path "data/sunflower_dataset_v2.0/val" ^
-	--dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
+    --dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
     --output_directory_path "evaluation-output/rtmdet-tiny_sahi_1088_aug_val"
 
 python scripts/evaluate_defective_ratio.py "data/sunflower_dataset_v2.0/val/val-annotations.json" "evaluation-output/rtmdet-tiny_sahi_1088_aug_val/detections/result.json"
@@ -86,7 +86,7 @@ python scripts/sahi_evaluate.py ^
     --overlap_height_ratio 0.1 ^
     --overlap_width_ratio 0.1 ^
     --dataset_split_path "data/sunflower_dataset_v2.0/val" ^
-	--dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
+    --dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
     --output_directory_path "evaluation-output/rtmdet-s_sahi_1088_val"
 
 python scripts/evaluate_defective_ratio.py "data/sunflower_dataset_v2.0/val/val-annotations.json" "evaluation-output/rtmdet-s_sahi_1088_val/detections/result.json"
@@ -99,7 +99,7 @@ python scripts/sahi_evaluate.py ^
     --overlap_height_ratio 0.1 ^
     --overlap_width_ratio 0.1 ^
     --dataset_split_path "data/sunflower_dataset_v2.0/val" ^
-	--dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
+    --dataset_annotations_path "data/sunflower_dataset_v2.0/val/val-annotations.json" ^
     --output_directory_path "evaluation-output/rtmdet-s_sahi_1088_aug_val"
 
 python scripts/evaluate_defective_ratio.py "data/sunflower_dataset_v2.0/val/val-annotations.json" "evaluation-output/rtmdet-s_sahi_1088_aug_val/detections/result.json"
@@ -114,7 +114,7 @@ python scripts/sahi_evaluate.py ^
     --overlap_height_ratio 0.1 ^
     --overlap_width_ratio 0.1 ^
     --dataset_split_path "data/sunflower_dataset_v2.0/test" ^
-	--dataset_annotations_path "data/sunflower_dataset_v2.0/test/test-annotations.json" ^
+    --dataset_annotations_path "data/sunflower_dataset_v2.0/test/test-annotations.json" ^
     --output_directory_path "evaluation-output/rtmdet-tiny_sahi_640_test"
-	
+
 python scripts/evaluate_defective_ratio.py "data/sunflower_dataset_v2.0/test/test-annotations.json" "evaluation-output/rtmdet-tiny_sahi_640_test/detections/result.json"
