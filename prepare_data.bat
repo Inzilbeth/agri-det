@@ -1,2 +1,2 @@
-python scripts/slice_coco_dataset.py agri-det/data/sunflower_dataset_v1.0 agri-det/data/sunflower_dataset_v1.0_sliced_640 640 640 0.1 0.1
-python scripts/slice_coco_dataset.py agri-det/data/sunflower_dataset_v1.0 agri-det/data/sunflower_dataset_v1.0_sliced_1088 1088 1088 0.1 0.1
+python scripts/sahi_slice_dataset.py data/sunflower_dataset_v2.0 data/sunflower_dataset_v2.0_sliced_640 640 640 0.1 0.1
+python scripts/sahi_slice_dataset.py data/sunflower_dataset_v2.0 data/sunflower_dataset_v2.0_sliced_1088 1088 1088 0.1 0.1

@@ -1,0 +1,4 @@
+[tool.black]
+line-length = 88
+target-version = ['py38']  # specify which versions of Python you are targeting
+include = '\.pyi?$'

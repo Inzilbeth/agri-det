@@ -2,15 +2,15 @@
 
 # Agri-det
 
-At the moment, this library facilitates the identification of defective sunflowers using aerial images. It is planned to be expanded for use in UAV-based agricultural computer vision applications.
+Currently, this library identifies all sunflowers in aerial images and classifies them as healthy or defective. It also includes tools to calculate the proportion of defective sunflowers in relation to the total count. This functionality is intended for expansion to support broader UAV-based agricultural computer vision applications.
 
 ## Prerequisites
 
 ### Hardware
 
 - Requires an NVIDIA GPU
-- Minimum of 16 GB VRAM needed
-- At least 32 GB of RAM recommended
+- Minimum of 16 GB VRAM required
+- At least 64 GB of RAM required
 
 ### Installation
 
@@ -26,7 +26,7 @@ Data is only required if you want to reproduce the training.
 
 ### Download data
 
-Defective sunflower dataset can be downloaded from the [GraviLink cloud](https://cloud.gravilink.org/s/DfcQYqxwzCYWN6f). The dataset folder should be placed in the `data` folder of the repository: `agri-det/data/sunflower_dataset_v1.0`.
+Defective sunflower dataset can be downloaded from the [GraviLink cloud](https://cloud.gravilink.org/s/w884pcF4639etoF). The dataset folder should be placed in the `data` folder of the repository: `agri-det/data/sunflower_dataset_v2.0`.
 
 ### Prepare data
 
@@ -88,10 +88,12 @@ python scripts/sahi_evaluate.py ^
     --overlap_width_ratio 0.1 ^
     --dataset_split_path "data/sunflower_dataset_v1.0/val" ^
     --dataset_annotations_path "data/sunflower_dataset_v1.0/val/val-annotations.json" ^
-    --output_directory_path "evaluation-output/rtmdet-tiny_sahi_640"
+    --output_directory_path "evaluation-output/rtmdet-tiny_sahi_640_val"
 ```
 
 ## Inference
+
+### Bounding box inference
 
 To inference with a non-SAHI model, run the `mmdetection/demo/image_demo.py` script with the desired parameters. For example:
 
