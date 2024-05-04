@@ -11,7 +11,7 @@ custom_hooks = [
         type='EMAHook',
         update_buffers=True),
 ]
-data_root = 'data/sunflower_dataset_v1.0'
+data_root = 'data/sunflower_dataset_v2.0'
 dataset_type = 'CocoDataset'
 default_hooks = dict(
     checkpoint=dict(
@@ -83,7 +83,7 @@ model = dict(
             type='QualityFocalLoss',
             use_sigmoid=True),
         norm_cfg=dict(type='SyncBN'),
-        num_classes=1,
+        num_classes=2,
         pred_kernel_size=1,
         share_conv=True,
         stacked_convs=2,
@@ -116,9 +116,9 @@ model = dict(
         out_channels=96,
         type='CSPNeXtPAFPN'),
     test_cfg=dict(
-        max_per_img=300,
+        max_per_img=3000,
         min_bbox_size=0,
-        nms=dict(iou_threshold=0.65, type='nms'),
+        nms=dict(iou_threshold=0.4, type='nms'),
         nms_pre=30000,
         score_thr=0.001),
     train_cfg=dict(
@@ -151,8 +151,8 @@ test_dataloader = dict(
         ann_file='val/val-annotations.json',
         backend_args=None,
         data_prefix=dict(img='val/'),
-        data_root='data/sunflower_dataset_v1.0',
-        metainfo=dict(classes='defective_sunflower'),
+        data_root='data/sunflower_dataset_v2.0',
+        metainfo=dict(classes=['defective_sunflower', 'healthy_sunflower']),
         pipeline=[
             dict(backend_args=None, type='LoadImageFromFile'),
             dict(type='LoadAnnotations', with_bbox=True),
@@ -188,14 +188,14 @@ test_dataloader = dict(
     persistent_workers=True,
     sampler=dict(shuffle=False, type='DefaultSampler'))
 test_evaluator = dict(
-    ann_file='data/sunflower_dataset_v1.0/val/val-annotations.json',
+    ann_file='data/sunflower_dataset_v2.0/val/val-annotations.json',
     backend_args=None,
     format_only=False,
     metric='bbox',
     proposal_nums=(
-        300,
-        250,
-        200,
+        3000,
+        3000,
+        3000,
     ),
     type='CocoMetric')
 test_pipeline = [
@@ -240,9 +240,9 @@ train_dataloader = dict(
         ann_file='train/train-annotations.json',
         backend_args=None,
         data_prefix=dict(img='train/'),
-        data_root='data/sunflower_dataset_v1.0',
+        data_root='data/sunflower_dataset_v2.0',
         filter_cfg=dict(filter_empty_gt=True, min_size=32),
-        metainfo=dict(classes='defective_sunflower'),
+        metainfo=dict(classes=['defective_sunflower', 'healthy_sunflower']),
         pipeline=[
             dict(backend_args=None, type='LoadImageFromFile'),
             dict(type='LoadAnnotations', with_bbox=True),
@@ -360,8 +360,8 @@ val_dataloader = dict(
         ann_file='val/val-annotations.json',
         backend_args=None,
         data_prefix=dict(img='val/'),
-        data_root='data/sunflower_dataset_v1.0',
-        metainfo=dict(classes='defective_sunflower'),
+        data_root='data/sunflower_dataset_v2.0',
+        metainfo=dict(classes=['defective_sunflower', 'healthy_sunflower']),
         pipeline=[
             dict(backend_args=None, type='LoadImageFromFile'),
             dict(type='LoadAnnotations', with_bbox=True),
@@ -397,14 +397,14 @@ val_dataloader = dict(
     persistent_workers=True,
     sampler=dict(shuffle=False, type='DefaultSampler'))
 val_evaluator = dict(
-    ann_file='data/sunflower_dataset_v1.0/val/val-annotations.json',
+    ann_file='data/sunflower_dataset_v2.0/val/val-annotations.json',
     backend_args=None,
     format_only=False,
     metric='bbox',
     proposal_nums=(
-        300,
-        250,
-        200,
+        3000,
+        3000,
+        3000,
     ),
     type='CocoMetric')
 vis_backends = [

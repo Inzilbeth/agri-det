@@ -13,6 +13,9 @@ DEFAULT_TEXT_SIZE = 2
 DEFAULT_RECT_TH = 2
 DEFAULT_HIDE_LABELS = True
 
+DEFAULT_MATCH_METRIC = "IOU"
+DEFAULT_MATCH_THRESHOLD = 0.35
+
 
 def inference(
     model_path: str,
@@ -60,6 +63,8 @@ def inference(
         slice_width=slice_width,
         overlap_height_ratio=overlap_height_ratio,
         overlap_width_ratio=overlap_width_ratio,
+        postprocess_match_metric=DEFAULT_MATCH_METRIC,
+        postprocess_match_threshold=0.35,
     )
 
     result.export_visuals(

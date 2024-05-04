@@ -15,7 +15,10 @@ DEFAULT_VISUAL_TEXT_SIZE = 2
 DEFAULT_VISUAL_TEXT_THICKNESS = 1
 DEFAULT_VISUAL_HIDE_LABELS = True
 
-DEFAULT_MAX_DETECTIONS = [200, 250, 300]
+DEFAULT_MAX_DETECTIONS = [3000, 3000, 3000]
+
+DEFAULT_MATCH_METRIC = "IOS"
+DEFAULT_MATCH_THRESHOLD = 0.4
 
 
 def evaluate_dataset_split(
@@ -78,6 +81,9 @@ def evaluate_dataset_split(
         visual_text_size=DEFAULT_VISUAL_TEXT_SIZE,
         visual_text_thickness=DEFAULT_VISUAL_TEXT_THICKNESS,
         visual_hide_labels=DEFAULT_VISUAL_HIDE_LABELS,
+        postprocess_match_metric=DEFAULT_MATCH_METRIC,
+        postprocess_match_threshold=DEFAULT_MATCH_THRESHOLD,
+        verbose=0,
     )
 
     coco_gt = COCO(dataset_annotations_path)

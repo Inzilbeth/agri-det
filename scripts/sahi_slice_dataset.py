@@ -1,5 +1,6 @@
 import argparse
 import os
+from pathlib import Path
 
 from sahi.slicing import slice_coco
 
@@ -34,7 +35,7 @@ def slice_split(
     slice_coco(
         coco_annotation_file_path=original_coco_annotation_path,
         image_dir=image_dir,
-        output_coco_annotation_file_name=f"{split}-annotations.json",
+        output_coco_annotation_file_name=f"{split}-annotations",
         output_dir=output_dir,
         slice_height=slice_height,
         slice_width=slice_width,
@@ -44,6 +45,14 @@ def slice_split(
         min_area_ratio=DEFAULT_MIN_AREA_RATIO,
         verbose=DEFAULT_VERBOSE,
     )
+
+    # SAHI adds an unneeded "_coco.json" postfix, and I prefer to remove it for consistency
+    output_dir_path = Path(output_dir)
+
+    sahi_path = output_dir_path / f"{split}-annotations_coco.json"
+    new_path = output_dir_path / f"{split}-annotations.json"
+
+    sahi_path.rename(new_path)
 
 
 def main(
@@ -55,7 +64,7 @@ def main(
     overlap_width_ratio: float,
 ):
     if not os.path.exists(dataset_root_directory_path):
-        raise (
+        raise FileNotFoundError(
             f"The dataset root directory path '{dataset_root_directory_path}' does not exist."
         )
 
@@ -88,31 +97,23 @@ if __name__ == "__main__":
     parser.add_argument(
         "dataset_root_directory_path",
         type=str,
-        required=True,
         help="Path to the root directory of the original dataset.",
     )
     parser.add_argument(
         "output_root_directory_path",
         type=str,
-        required=True,
         help="Path to the root directory for the output sliced dataset.",
     )
-    parser.add_argument(
-        "slice_height", type=int, required=True, help="Height of the slices."
-    )
-    parser.add_argument(
-        "slice_width", type=int, required=True, help="Width of the slices."
-    )
+    parser.add_argument("slice_height", type=int, help="Height of the slices.")
+    parser.add_argument("slice_width", type=int, help="Width of the slices.")
     parser.add_argument(
         "overlap_height_ratio",
         type=float,
-        required=True,
         help="Slice overlap ratio for the height.",
     )
     parser.add_argument(
         "overlap_width_ratio",
         type=float,
-        required=True,
         help="Slice overlap ratio for the width.",
     )
 
